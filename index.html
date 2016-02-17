@@ -356,12 +356,10 @@ document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
   </form>  
   </td>  </tr>  </tbody>  </table>  
 </body>  </html>  
-
-  <div align="left">
-    <textarea rows="3" name="msg" cols="24" input="" onkeyup="countChar(this)" onKeyPress="return keyHole(event)" align="Left">
-    </textarea><br>
     <div id="charNum"></div>
+    <br>
+    <textarea rows="3" cols="24" onkeyup="countChar(this)" onKeyPress="return keyHole(event)">
+    </textarea><br>
     <input name="count" value="0" size="3" disabled="disabled" type="text">
     <input value="Send Page" id="submit" STYLE="background-color:#FF0000; color: #ffffff; font-size: 120%" name="B1" type="submit">
     <input value="Clear" name="B2" type="reset">
-  </div>
