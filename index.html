@@ -58,13 +58,13 @@ function hideURLbar() {
 }
 
 function countChar(val) {
-        var len = val.value.length;
-        if (len >= 121) {
-          val.value = val.value.substring(0, 120);
-        } else {
-          $('#charNum').text(120 - len);
-        }
-      };
+    var len = val.value.length;
+    if (len >= 121) {
+      val.value = val.value.substring(0, 120);
+    } else {
+      $('#charNum').text(120 - len);
+    }
+  }
 
 function keyHole(evt) {
    if (navigator.appName == "Netscape") {
