@@ -57,14 +57,10 @@ function hideURLbar() {
         self.navigationController.navigationBar.hidden=YES;
 }
 
-function countChar(val) {
-    var len = val.value.length;
-    if (len >= 121) {
-      val.value = val.value.substring(0, 120);
-    } else {
-      $('#charNum').text(120 - len);
-    }
-  }
+function CheckMessageLength(theForm)
+      {
+  theForm.count.value= theForm.msg.value.length;
+}
 
 function keyHole(evt) {
    if (navigator.appName == "Netscape") {
@@ -356,10 +352,11 @@ document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
   </form>  
   </td>  </tr>  </tbody>  </table>  
 </body>  </html>  
-    <div id="charNum"></div>
-    <br>
-    <textarea rows="3" cols="24" onkeyup="countChar(this)" onKeyPress="return keyHole(event)">
-    </textarea><br>
+
+  <div align="left">
+    <textarea rows="3" name="msg" cols="24" wrap="soft" input="" onKeyUp="CheckMessageLength(this.form)" onKeyPress="return keyHole(event)" align="middle">
+    </textarea><br>  
     <input name="count" value="0" size="3" disabled="disabled" type="text">
     <input value="Send Page" id="submit" STYLE="background-color:#FF0000; color: #ffffff; font-size: 120%" name="B1" type="submit">
     <input value="Clear" name="B2" type="reset">
+  </div>
