@@ -360,3 +360,108 @@ document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
     <input value="Send Page" id="submit" STYLE="background-color:#FF0000; color: #ffffff; font-size: 120%" name="B1" type="submit">
     <input value="Clear" name="B2" type="reset">
   </div>
+
+
+Trial area
+
+
+<script language="JavaScript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+<tr>
+									<td align="left">
+										<table border="0" cellpadding="0" cellspacing="0">
+											<tbody><tr>
+												<td colspan="2" valign="top" align="left">
+													<select name="ctl00$ContentPlaceHolder1$Dps1$DDLPredefinedMessages" id="ctl00_ContentPlaceHolder1_Dps1_DDLPredefinedMessages" class="LabelXSmallGrey" onchange=";return setTextBoxValueFromDropDownElement('ctl00_ContentPlaceHolder1_Dps1_DDLPredefinedMessages','ctl00_ContentPlaceHolder1_Dps1_TxtMessage')">
+		<option selected="selected" value="Select one of predefined message(s)">Select one of predefined message(s)</option>
+		<option value="NICU Stat Help">NICU Stat Help</option>
+		<option value="&quot;911&quot; Emergency in PACU">"911" Emergency in PACU</option>
+		<option value="PACU full, sign outs needed">PACU full, sign outs needed</option>
+		<option value="Sign out needed in slot #">Sign out needed in slot #</option>
+		<option value="Anest paperwork not complete in slot #">Anest paperwork not complete in slot #</option>
+		<option value="No inpatient beds available">No inpatient beds available</option>
+		<option value="Orders needed for pt in slot #">Orders needed for pt in slot #</option>
+		<option value="Med/Surg restraint applied, please sign order within 12 hours">Med/Surg restraint applied, please sign order within 12 hours</option>
+		<option value="Call RPh for D/C med review #">Call RPh for D/C med review #</option>
+		<option value="Call RPh for D/C plan at ">Call RPh for D/C plan at </option>
+		<option value="Call CM for D/C plan at ">Call CM for D/C plan at </option>
+		<option value="Signature needed to D/C room#">Signature needed to D/C room#</option>
+		<option value="Documentation not complete room#">Documentation not complete room#</option>
+		<option value="Call RPh for med order at ">Call RPh for med order at </option>
+		<option value="ON ECMO in">ON ECMO in</option>
+		<option value="OFF ECMO">OFF ECMO</option>
+		<option value="Pharmacy Carts are ready">Pharmacy Carts are ready</option>
+		<option value="Admit to OBS status order needed for pt ____">Admit to OBS status order needed for pt ____</option>
+		<option value="Admit to IP status order needed room# ____">Admit to IP status order needed room# ____</option>
+		<option value="OBS pt ____ w/b at 23hr mark at ____">OBS pt ____ w/b at 23hr mark at ____</option>
+		<option value="OBS pt ____  over 23hr mark at ____">OBS pt ____  over 23hr mark at ____</option>
+		<option value="Patient ____ in PACU at ____ with epidural, text page beeper 8681 with bed assignment">Patient ____ in PACU at ____ with epidural, text page beeper 8681 with bed assig...</option>
+		<option value="Patient ____ in PACU at ____ awake, text page beeper 8681 with bed assignment">Patient ____ in PACU at ____ awake, text page beeper 8681 with bed assignment</option>
+		<option value="Patient ____ in PACU at ____ intubated, text page beeper 8681 with bed assignment">Patient ____ in PACU at ____ intubated, text page beeper 8681 with bed assignmen...</option>
+		<option value="Patient ____ in PACU at ____ needs nerve block in PACU, text page beeper 8681 with bed assignment">Patient ____ in PACU at ____ needs nerve block in PACU, text page beeper 8681 wi...</option>
+		<option value="Patient ____ in PACU at ____ going OPSC/FDS, text page beeper 8681 with bed assignment">Patient ____ in PACU at ____ going OPSC/FDS, text page beeper 8681 with bed assi...</option>
+		<option value="Please come to the Outpatient-Lab.  Thank you.">Please come to the Outpatient-Lab.  Thank you.</option>
+		<option value="Please call 3-5038 regarding a sick call - Staffing Office">Please call 3-5038 regarding a sick call - Staffing Office</option>
+		<option value="Please report to Radiology.  Thank you.">Please report to Radiology.  Thank you.</option>
+		<option value="Please call ____ regarding your Health Link issue. ____.">Please call ____ regarding your Health Link issue. ____.</option>
+		<option value="The procedure has started.">The procedure has started.</option>
+		<option value="El procedimiento ha comenzado.">El procedimiento ha comenzado.</option>
+		<option value="The procedure is going well at this time.">The procedure is going well at this time.</option>
+		<option value="El procedimiento va bien en esto momento">El procedimiento va bien en esto momento</option>
+		<option value="Please return to the 3rd floor nurses station">Please return to the 3rd floor nurses station</option>
+		<option value="Por Favor, regrese a la estacion de enfermeras en el 3er piso">Por Favor, regrese a la estacion de enfermeras en el 3er piso</option>
+		<option value="EDO Initial inter-professional care conference scheduled for____at____in____.">EDO Initial inter-professional care conference scheduled for____at____in____.</option>
+		<option value="EDO Daily Rounds starting at____on____.">EDO Daily Rounds starting at____on____.</option>
+		<option value="EDO care conference scheduled for____at____in____.">EDO care conference scheduled for____at____in____.</option>
+		<option value="Please return to Pediatric Sedation on 1st floor">Please return to Pediatric Sedation on 1st floor</option>
+		<option value="Walk In for _________. Non urgent">Walk In for _________. Non urgent</option>
+		<option value="Please Return To OutPatient Surgery ">Please Return To OutPatient Surgery </option>
+		<option value=" Please Return to 1st Day Surgery "> Please Return to 1st Day Surgery </option>
+
+	</select></td>
+											</tr>
+
+											<tr>
+													<!--for reason of changing dynamically properties Td elements(TdMessageId1, TdMessageId2, TdMessageId2_1, TdMessageId2_2) are set as server side elements-->
+													<td id="ctl00_ContentPlaceHolder1_Dps1_TdMessageId1" style="height: 66px">
+														<textarea name="ctl00$ContentPlaceHolder1$Dps1$TxtMessage" rows="2" cols="20" id="ctl00_ContentPlaceHolder1_Dps1_TxtMessage" class="TextBox" onfocus="numberofcharacters('ctl00_ContentPlaceHolder1_Dps1_TxtMessage',120,'divcharactersremaining')" onkeyup="numberofcharacters('ctl00_ContentPlaceHolder1_Dps1_TxtMessage',120,'divcharactersremaining');" style="height:80px;width:350px;"></textarea></td>
+	
+													<td id="ctl00_ContentPlaceHolder1_Dps1_TdMessageId2" valign="bottom" align="left" style="height: 66px">
+														<table>
+															<tbody><tr>
+																<td id="ctl00_ContentPlaceHolder1_Dps1_TdMessageId2_1" align="left">
+																	<a onclick=" return showalertmessage('ctl00_ContentPlaceHolder1_Dps1_TxtMessage','Please, enter the message!');" id="ctl00_ContentPlaceHolder1_Dps1_BtnSend" class="BtnNormalStyle" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Dps1$BtnSend','')" style="display:inline-block;height:20px;">
+																		<img src="Images/go_right.png" alt="" style="vertical-align: middle; border-width: 0px" height="16px">&nbsp;Send</a>
+																	
+																</td>
+	
+															</tr>
+															<tr>
+																
+															</tr>
+														</tbody></table>
+													</td>
+	
+											</tr>
+												
+										</tbody></table>
+										
+									</td>
+									
+									<td>
+									</td>
+								</tr>
