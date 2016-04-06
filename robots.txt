@@ -3,3 +3,11 @@ Crawl-delay: 30
 
 User-agent: *
 Disallow: /
+
+BrowserMatchNoCase "Baiduspider" bots
+BrowserMatchNoCase "HTTrack" bots
+BrowserMatchNoCase "Yandex" bots
+
+Order Allow,Deny
+Allow from ALL
+Deny from env=bots
