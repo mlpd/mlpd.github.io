@@ -13,73 +13,6 @@
 </head>
 <script language="JavaScript">
 
-function MM_setTextOfTextfield(objId,x,newText) { //v9.0
-  var splitarray = newText.split("|");
-  with (document){ if (getElementById){
-    var obj = getElementById(objId);
-    var ph = getElementById('phone');
-  }
-    if (obj) obj.value = splitarray[0];
-    if (ph) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a>" + " ";
-    if (ph && splitarray[2]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2];
-    if (ph && splitarray[3]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> ";
-    if (ph && splitarray[4]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> " + splitarray[4];
-  }
-}
-
-window.addEventListener('load', function() {
-    setTimeout(scrollTo, 0, 0, 1);
-}, false);
-
-window.onload = function initialLoad() {
-    updateOrientation();
-}
-
-$(document).bind(
-  'touchmove',
-  function(e) {
-  e.preventDefault();
-  }
-);
-
-if (navigator.userAgent.indexOf('iPhone') != -1) {
-        addEventListener("load", function() {
-                setTimeout(hideURLbar, 0);
-        }, false);
-}
-
-function hideURLbar() {
-        window.scrollTo(100, 1);
-        self.navigationController.navigationBar.hidden=YES;
-}
-
-function CheckMessageLength(theForm)
-      {
-  theForm.count.value= theForm.msg.value.length;
-}
-
-function keyHole(evt) {
-   if (navigator.appName == "Netscape") {
-    if (evt.which == 13) {
-      evt.which = 0;
-      if (Form1_Validator(document.forms.Form1)) {
-        document.forms.Form1.submit();
-      }
-    }
-  } else {
-    if (evt.keyCode == 13) {
-      evt.keyCode = 0;
-      if( confirm ("OK to Send!") ) {
-        if (Form1_Validator(document.forms.Form1)) {
-          document.forms.Form1.msg.focus();
-          document.forms.Form1.submit();    
-        }
-      }      
-    }
-  }
-  return true;
-}
-
 function keyPin(evt) {
   if (navigator.appName == "Netscape") {
     if (evt.which == 13) {    
@@ -94,43 +27,6 @@ function keyPin(evt) {
   }
   return true;
 }
-
-function Form1_Validator(theForm) {
-  if (theForm.pin.value == ""){
-    alert("Please enter a pin number.");
-    theForm.pin.focus();
-    return (false);
-  }
-
-  if (theForm.pin.value.length > 11){
-    alert("Invalid pin number.  The pin number is the last seven digits of your pager number.");
-    theForm.pin.focus();
-    return (false);
-  }
-
-  if (theForm.msg.value.length > 120){
-    var answer = confirm("Message is over 120 Characters! Do you wish to Continue?")
-     if (answer){
-        return(true);     
-     }else{
-        return(false);
-     }
-  }
-
-  if (theForm.msg.value == ""){
-    alert("Please enter a message to send to the pager.");
-    theForm.msg.focus();
-    return (false);
-  }
-
-  return (true);
-}
-
-function blockMove() {
-       event.preventDefault() ;
-}
-
-document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
 
 </script>
 
