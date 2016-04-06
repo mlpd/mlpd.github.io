@@ -3,7 +3,7 @@
 <br>
   
 <title>
-	American Messaging MyAirMail Account
+	Paging
 </title>
 
 <link type="text/css" href="common.css" rel="stylesheet">
@@ -106,16 +106,156 @@ function myaccount(url) {
 		To:&nbsp;
 	</th>
 
-<div align="left">
+<head language="JavaScript">
+
+<script language="JavaScript">
+
+function MM_setTextOfTextfield(objId,x,newText) { //v9.0
+  var splitarray = newText.split("|");
+  with (document){ if (getElementById){
+    var obj = getElementById(objId);
+    var ph = getElementById('phone');
+  }
+    if (obj) obj.value = splitarray[0];
+    if (ph) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a>" + " ";
+    if (ph && splitarray[2]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2];
+    if (ph && splitarray[3]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> ";
+    if (ph && splitarray[4]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> " + splitarray[4];
+  }
+}
+
+window.addEventListener('load', function() {
+    setTimeout(scrollTo, 0, 0, 1);
+}, false);
+
+window.onload = function initialLoad() {
+    updateOrientation();
+}
+
+$(document).bind(
+  'touchmove',
+  function(e) {
+  e.preventDefault();
+  }
+);
+
+if (navigator.userAgent.indexOf('iPhone') != -1) {
+        addEventListener("load", function() {
+                setTimeout(hideURLbar, 0);
+        }, false);
+}
+
+function hideURLbar() {
+        window.scrollTo(100, 1);
+        self.navigationController.navigationBar.hidden=YES;
+}
+
+function CheckMessageLength(theForm)
+      {
+  theForm.count.value= theForm.msg.value.length;
+}
+
+function keyHole(evt) {
+   if (navigator.appName == "Netscape") {
+    if (evt.which == 13) {
+      evt.which = 0;
+      if (Form1_Validator(document.forms.Form1)) {
+        document.forms.Form1.submit();
+      }
+    }
+  } else {
+    if (evt.keyCode == 13) {
+      evt.keyCode = 0;
+      if( confirm ("OK to Send!") ) {
+        if (Form1_Validator(document.forms.Form1)) {
+          document.forms.Form1.msg.focus();
+          document.forms.Form1.submit();    
+        }
+      }      
+    }
+  }
+  return true;
+}
+
+function keyPin(evt) {
+  if (navigator.appName == "Netscape") {
+    if (evt.which == 13) {    
+      document.forms.Form1.msg.focus();
+      evt.which = 0;
+    }
+  } else {
+    if (evt.keyCode == 13) {
+      document.forms.Form1.msg.focus();
+      evt.keyCode = 0;
+    }
+  }
+  return true;
+}
+
+function Form1_Validator(theForm) {
+  if (theForm.gw_pin.value == ""){
+    alert("Please enter a pin number.");
+    theForm.gw_pin.focus();
+    return (false);
+  }
+
+  if (theForm.gw_pin.value.length > 11){
+    alert("Invalid pin number.  The pin number is the last seven digits of your pager number.");
+    theForm.gw_pin.focus();
+    return (false);
+  }
+
+  if (theForm.msg.value.length > 120){
+    var answer = confirm("Message is over 120 Characters! Do you wish to Continue?")
+     if (answer){
+        return(true);     
+     }else{
+        return(false);
+     }
+  }
+
+  if (theForm.msg.value == ""){
+    alert("Please enter a message to send to the pager.");
+    theForm.msg.focus();
+    return (false);
+  }
+
+  return (true);
+}
+
+function blockMove() {
+       event.preventDefault() ;
+}
+
+document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
+
+</script>
+</head>
+
+<body ontouchmove="blockMove()" height="100%">
+<table border="0">
+  <tbody>
+    <tr><td bgcolor="#FFFFFF">
+
+      <form method="GET" action="http://www.jsmcom.com/sendpage/addsendpage.asp" onSubmit="return Form1_Validator(this)" name="Form1">
+      <img src="fammed_logo_h_out.jpg" alt="Inside DFM" width="320px" longdesc="http://inside.fammed.wisc.edu">
+      <br>
+      <br>
+
+  <div align="left">
+      <font color="#000000" face="arial, arial, helvetica"><strong>Pager Pin Number: </strong><small>(7-digit number)</small><br></font>
+  </div>
+  
+  <div align="left">
     <font color="#000000" face="arial, arial, helvetica">
-      <input name="gw_pin" type="text" id="gw_pin" style="background-color: rgb(f, f, f);" tabindex="0" onkeypress="return keyPin(event)" size="10" maxlength="10">
+      <input name="gw_pin" type="text" id="gw_pin" style="background-color: rgb(f, f, f);" tabindex="0" onKeyPress="return keyPin(event)" size="10" maxlength="10">
     </font>
-    <b id="phone"></b>
+    <b id='phone'></b>
     <br>
     <font color="#000000" face="arial, arial, helvetica">
     
-    <select name="contactlist" id="contactlist" onchange="MM_setTextOfTextfield('gw_pin','',value);">
-      <option selected="">-- Select Name --</option>
+    <select name="contactlist" id="contactlist" onChange="MM_setTextOfTextfield('gw_pin','',value);">
+      <option selected>-- Select Name --</option>
 <option value="376-9206|608-469-9380|cell||">Arndt, Brian  (V)</option>
 <option value="No Pager|608-852-3580|cell||">Barrett, Bruce  (V)</option>
 <option value="376-9177|608-469-5635|cell||">Beasley, John  (V)</option>
@@ -304,9 +444,9 @@ function myaccount(url) {
   </font>
   <br>
 
-  
-  </div>
-
+  </form>
+  </td></tr></tbody></table>
+  </body>
 	<td style="
 			padding-top:	20px;
 		" align="left" valign="middle">
