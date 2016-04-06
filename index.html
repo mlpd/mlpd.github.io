@@ -105,7 +105,41 @@ function myaccount(url) {
 	<td style="
 			padding-top:	20px;
 		" align="left" valign="middle">
-	<!--DFM Script-->
+
+<!--DFM Script-->
+<script language="JavaScript">
+
+function MM_setTextOfTextfield(objId,x,newText) { //v9.0
+  var splitarray = newText.split("|");
+  with (document){ if (getElementById){
+    var obj = getElementById(objId);
+    var ph = getElementById('phone');
+  }
+    if (obj) obj.value = splitarray[0];
+    if (ph) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a>" + " ";
+    if (ph && splitarray[2]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2];
+    if (ph && splitarray[3]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> ";
+    if (ph && splitarray[4]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> " + splitarray[4];
+  }
+}
+
+function keyPin(evt) {
+  if (navigator.appName == "Netscape") {
+    if (evt.which == 13) {    
+      document.forms.Form1.msg.focus();
+      evt.which = 0;
+    }
+  } else {
+    if (evt.keyCode == 13) {
+      document.forms.Form1.msg.focus();
+      evt.keyCode = 0;
+    }
+  }
+  return true;
+}
+
+</script>
+
 <head language="JavaScript"> 
 <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
 <meta name="googlebot" content="noindex">
@@ -311,6 +345,7 @@ function myaccount(url) {
   </font>
   <br>
 <!-- End of DFM Script -->
+
 	</td>
 	
 </tr>
