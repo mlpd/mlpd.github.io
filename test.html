@@ -95,9 +95,9 @@ function MM_setTextOfTextfield(objId,x,newText) { //v9.0
   }
     if (obj) obj.value = splitarray[0];
     if (ph) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a>" + " ";
-    if (ph && splitarray[2]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2];
-    if (ph && splitarray[3]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> ";
-    if (ph && splitarray[4]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> " + splitarray[4];
+#    if (ph && splitarray[2]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2];
+#    if (ph && splitarray[3]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> ";
+#    if (ph && splitarray[4]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> " + splitarray[4];
   }
 }
 
@@ -135,7 +135,7 @@ function keyPin(evt) {
     
     <select name="contactlist" id="contactlist" onchange="MM_setTextOfTextfield('gw_pin','',value);">
       <option selected="">-- Select Name --</option>
-		<option value="376-0141|919-434-4655|cell||">Dubal, Milap  (NE)</option>
+		<option value="376-0141|919-434-4655|call|text|">Dubal, Milap  (NE)</option>
 		<option value="123-1111|222-2222|333-3333|444-4444|">test sections,   ()</option>
 	        <option value="123-4567||||">123#,   ()</option>
 		<option value="After Hours|Message Line||Fax Number|">Clinic, Phone  ()</option>
