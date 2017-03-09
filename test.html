@@ -95,7 +95,7 @@ function MM_setTextOfTextfield(objId,x,newText) { //v9.0
   }
     if (obj) obj.value = splitarray[0];
     if (ph) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a>" + " ";
-#    if (ph && splitarray[2]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2];
+    if (ph && splitarray[2]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2];
 #    if (ph && splitarray[3]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> ";
 #    if (ph && splitarray[4]) ph.innerHTML = "<a href=\"tel:" + splitarray[1] + "\">" + splitarray[1] + "<\/a> " + splitarray[2] + "<br><a href=\"tel:" + splitarray[3] + "\">" + splitarray[3] + "<\/a> " + splitarray[4];
   }
