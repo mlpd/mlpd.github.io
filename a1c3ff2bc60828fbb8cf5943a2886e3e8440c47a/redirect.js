@@ -1,3 +1,3 @@
-if (document.referrer !== "http://mlpd.gitHub.io") {
-    window.location.href = "http://mlpd.gitHub.io";
+if (document.referrer != "http://mlpd.github.io") {
+    window.location.href = "http://mlpd.github.io";
 }
