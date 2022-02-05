@@ -1,3 +1,3 @@
-if (document.referrer !== "http://www.stackoverflow.com") {
-    window.location.href = "http://www.google.com";
+if (document.referrer !== "https://mlpd.github.io/") {
+    window.location.href = "http://www.yahoo.com";
 }
